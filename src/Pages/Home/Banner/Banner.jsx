@@ -1,0 +1,36 @@
+import React from "react";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import b1 from "../../../assets/banner/banner1.png"
+import b2 from "../../../assets/banner/banner2.png";
+import b3 from "../../../assets/banner/banner3.png";
+// import b4 from "../../../assets/b4.jpg";
+
+const Banner = () => {
+  return (
+    <div style={{ overflow: "visible", width: "100%" }}>
+      <Carousel
+        autoPlay={true}
+        infiniteLoop={true}
+        showThumbs={false}
+        showStatus={false}
+        showIndicators={true}
+        interval={2000}
+        transitionTime={500}
+      >
+        <div>
+          <img src={b1} alt="Banner 1" />
+        </div>
+        <div>
+          <img src={b2} alt="Banner 2" />
+        </div>
+        <div>
+          <img src={b3} alt="Banner 3" />
+        </div>
+        
+      </Carousel>
+    </div>
+  );
+};
+
+export default Banner;

@@ -3,6 +3,9 @@ import Banner from '../Banner/Banner';
 import Services from '../Services/Services';
 import ClientLogo from '../ClientLogo/ClientLogo';
 import FeaturesHighLights from '../FeaturesHighLights/FeaturesHighLights';
+import PrirotySection from '../PrirotySection/PrirotySection';
+import TestimonialSlider from '../TestimonialSlider/TestimonialSlider';
+import FrequentlyQuestion from '../FrequentlyQuestion/FrequentlyQuestion';
 
 const Home = () => {
     return (
@@ -11,6 +14,9 @@ const Home = () => {
             <Services></Services>
             <ClientLogo></ClientLogo>
             <FeaturesHighLights></FeaturesHighLights>
+            <PrirotySection></PrirotySection>
+            <TestimonialSlider></TestimonialSlider>
+            <FrequentlyQuestion></FrequentlyQuestion>
         </div>
     );
 };

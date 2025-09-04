@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
+import UseAuth from "../../../Hook/UseAuth/UseAuth";
 
 const Register = () => {
   const {
@@ -10,8 +11,16 @@ const Register = () => {
     formState: { errors },
   } = useForm();
 
+  const {createUser}=UseAuth();
   const onSubmit = (data) => {
     console.log("Register Data:", data);
+    createUser(data.email, data.password)
+    .then(result=>{
+      console.log(result.user);
+    })
+    .catch(error=>{
+      console.error(error)
+    })
   };
 
   const password = watch("password");

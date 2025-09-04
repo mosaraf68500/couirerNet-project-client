@@ -7,6 +7,7 @@ const SocialLogin = () => {
         signInGoogle()
         .then(result=>{
             console.log(result.user);
+            
         })
         .catch(error=>{
             console.error(error);

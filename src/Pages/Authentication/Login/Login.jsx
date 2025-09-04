@@ -1,5 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
   const {
@@ -81,12 +83,12 @@ const Login = () => {
           </button>
         </form>
 
+        <SocialLogin></SocialLogin>
+
         {/* Footer */}
         <p className="text-center text-gray-500 text-sm mt-6">
           Don’t have an account?{" "}
-          <a href="#" className="text-neutral-600 font-medium hover:underline">
-            Register
-          </a>
+          <Link to="/register"  className="link link-success">Register</Link>
         </p>
       </div>
     </div>

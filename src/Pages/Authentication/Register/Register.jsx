@@ -2,6 +2,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import UseAuth from "../../../Hook/UseAuth/UseAuth";
+import { Link } from "react-router";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
   const {
@@ -148,12 +150,12 @@ const Register = () => {
           </motion.button>
         </form>
 
+        <SocialLogin></SocialLogin>
+
         {/* Footer */}
         <p className="text-center text-gray-500 text-sm mt-6">
           Already have an account?{" "}
-          <a href="#" className="text-neutral-600 font-medium hover:underline">
-            Login
-          </a>
+          <Link to="/login"  className="link link-success">Login</Link>
         </p>
       </motion.div>
     </div>

@@ -3,10 +3,14 @@ import { AuthCotex } from "../AuthContex/AuthContex";
 import { auth } from "../../firebase/firebase.init";
 import {
   createUserWithEmailAndPassword,
+  GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
 } from "firebase/auth";
+
+const googleProvider=new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -26,6 +30,11 @@ const AuthProvider = ({ children }) => {
     return signOut(auth)
   }
 
+  const signInGoogle =()=>{
+    setLoading(true);
+    return signInWithPopup(auth,googleProvider);
+  }
+
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (CurrentUser) => {
       setUser(CurrentUser);
@@ -41,6 +50,7 @@ const AuthProvider = ({ children }) => {
     createUser,
     signInUser,
     logOut,
+    signInGoogle
   };
   return <AuthCotex value={AuthInfo}>{children}</AuthCotex>;
 };
